@@ -9,6 +9,31 @@
 #include <xc.h>
 #include <libpic30.h>
 
+int kodGraya(int n){
+    int temp[32];
+    int i=0, j=0;
+    while (n>0){
+        temp[i] = n%2;
+        n = n/2;
+        i++;
+    }
+    temp[i] = 0;
+    i++;
+    int wynik[i];
+    while(i>1){
+        wynik[j] = temp[i-1]^temp[i-2];
+        i--;
+        j++;
+    }
+    return drukowanieTablicy(wynik, j);
+}
+
+int drukowanieTablicy(int tab[], int size){
+    for(int k=0; k<size; k++){
+        return(tab[k]);
+    }
+}
+
 int main(void) {
     
     unsigned portValue = 0x0001;
@@ -28,12 +53,16 @@ int main(void) {
             case 2:
                 LATA = portValue;
                 portValue--;
-                if (portValue == 0xFF){
+                if(portValue == 0xFF){
                     portValue = 0;
                 }
                 break;
             case 3:
-                LATA = portValue + 3;
+                LATA = kodGraya(portValue);
+                portValue++;
+                if(portValue == 0xFF){
+                    portValue = 0;
+                }
                 break;
             case 4:
                 LATA = portValue + 7;

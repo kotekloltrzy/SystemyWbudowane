@@ -69,10 +69,10 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200                0xce           0x135  (309)
-.text                        0x2ce               0x184           0x246  (582)
-.init.delay32                0x452                0x1c            0x2a  (42)
+.text                        0x2ce               0x264           0x396  (918)
+.init.delay32                0x532                0x1c            0x2a  (42)
 
-                 Total "program" memory used (bytes):          0x3a5  (933) <1%
+                 Total "program" memory used (bytes):          0x4f5  (1269) <1%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x2000]
@@ -99,23 +99,27 @@ External Symbols in Program Memory (by address):
 
                   0x000200                  __resetPRI
                   0x00023c                  __psv_init
-                  0x000252                  __data_init_standard
                   0x000252                  __data_init
+                  0x000252                  __data_init_standard
                   0x0002c8                  __DefaultInterrupt
-                  0x0002ce                  _main
-                  0x0003c0                  _mainx
-                  0x000452                  ___delay32
+                  0x0002ce                  _kodGraya
+                  0x00037a                  _drukowanieTablicy
+                  0x00039c                  _main
+                  0x0004a0                  _mainx
+                  0x000532                  ___delay32
 
 External Symbols in Program Memory (by name):
 
                   0x0002c8                  __DefaultInterrupt
-                  0x000452                  ___delay32
+                  0x000532                  ___delay32
                   0x000252                  __data_init
                   0x000252                  __data_init_standard
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x0002ce                  _main
-                  0x0003c0                  _mainx
+                  0x00037a                  _drukowanieTablicy
+                  0x0002ce                  _kodGraya
+                  0x00039c                  _main
+                  0x0004a0                  _mainx
 
 Memory Configuration
 
@@ -188,33 +192,33 @@ __CONFIG1
 .comment
  *(.comment)
 
-.debug_info       0x000000        0x70f
+.debug_info       0x000000        0x7fe
  *(.debug_info)
- .debug_info      0x000000        0x39b build/default/production/dwa_guziki.o
- .debug_info      0x00039b        0x374 build/default/production/guzik.o
+ .debug_info      0x000000        0x48a build/default/production/dwa_guziki.o
+ .debug_info      0x00048a        0x374 build/default/production/guzik.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0x15d
+.debug_abbrev     0x000000        0x1c8
  *(.debug_abbrev)
  .debug_abbrev    0x000000          0x1 build/default/production/newmainXC16.o
- .debug_abbrev    0x000001         0xae build/default/production/dwa_guziki.o
- .debug_abbrev    0x0000af         0xae build/default/production/guzik.o
+ .debug_abbrev    0x000001        0x119 build/default/production/dwa_guziki.o
+ .debug_abbrev    0x00011a         0xae build/default/production/guzik.o
 
-.debug_line       0x000000        0x286
+.debug_line       0x000000        0x2a5
  *(.debug_line)
  .debug_line      0x000000         0x1a build/default/production/newmainXC16.o
- .debug_line      0x00001a        0x140 build/default/production/dwa_guziki.o
- .debug_line      0x00015a        0x12c build/default/production/guzik.o
+ .debug_line      0x00001a        0x15f build/default/production/dwa_guziki.o
+ .debug_line      0x000179        0x12c build/default/production/guzik.o
 
-.debug_frame      0x000000         0x5c
+.debug_frame      0x000000         0x98
  *(.debug_frame)
- .debug_frame     0x000000         0x2e build/default/production/dwa_guziki.o
- .debug_frame     0x00002e         0x2e build/default/production/guzik.o
+ .debug_frame     0x000000         0x6a build/default/production/dwa_guziki.o
+ .debug_frame     0x00006a         0x2e build/default/production/guzik.o
 
-.debug_str        0x000000         0x14
+.debug_str        0x000000         0x26
  *(.debug_str)
- .debug_str       0x000000          0xa build/default/production/dwa_guziki.o
- .debug_str       0x00000a          0xa build/default/production/guzik.o
+ .debug_str       0x000000         0x1c build/default/production/dwa_guziki.o
+ .debug_str       0x00001c          0xa build/default/production/guzik.o
 
 .debug_loc
  *(.debug_loc)
@@ -223,12 +227,12 @@ __CONFIG1
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000         0x37
+                  0x000000         0x5a
  *(.debug_pubnames)
  .debug_pubnames
-                  0x000000         0x1b build/default/production/dwa_guziki.o
+                  0x000000         0x3e build/default/production/dwa_guziki.o
  .debug_pubnames
-                  0x00001b         0x1c build/default/production/guzik.o
+                  0x00003e         0x1c build/default/production/guzik.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -848,12 +852,14 @@ __c30_signature
 .config_IESO      0x0157fc          0x2
  .config_IESO     0x0157fc          0x2 build/default/production/guzik.o
 
-.text             0x0002ce        0x184
- .text            0x0002ce         0xf2 build/default/production/dwa_guziki.o
-                  0x0002ce                  _main
- .text            0x0003c0         0x92 build/default/production/guzik.o
-                  0x0003c0                  _mainx
+.text             0x0002ce        0x264
+ .text            0x0002ce        0x1d2 build/default/production/dwa_guziki.o
+                  0x0002ce                  _kodGraya
+                  0x00037a                  _drukowanieTablicy
+                  0x00039c                  _main
+ .text            0x0004a0         0x92 build/default/production/guzik.o
+                  0x0004a0                  _mainx
 
-.init.delay32     0x000452         0x1c
- .init.delay32    0x000452         0x1c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(delay32.Meo)
-                  0x000452                  ___delay32
+.init.delay32     0x000532         0x1c
+ .init.delay32    0x000532         0x1c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(delay32.Meo)
+                  0x000532                  ___delay32
