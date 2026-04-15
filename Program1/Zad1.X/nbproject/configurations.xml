@@ -19,6 +19,8 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>newmainXC16.c</itemPath>
+      <itemPath>dwa_guziki.c</itemPath>
+      <itemPath>guzik.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
@@ -194,6 +196,12 @@
         <property key="relaxed-math" value="false"/>
         <property key="save-temps" value="false"/>
       </C30Global>
+      <PKOBSKDEPlatformTool>
+        <property key="firmware.download.all" value="false"/>
+      </PKOBSKDEPlatformTool>
+      <Tool>
+        <property key="firmware.download.all" value="false"/>
+      </Tool>
     </conf>
   </confs>
 </configurationDescriptor>
